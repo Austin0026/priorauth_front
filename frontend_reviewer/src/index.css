@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-app: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-surface: #f1f5f9;
+  --border-app: #e2e8f0;
+  --color-primary: #0284c7;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.panel-dark {
+  @apply bg-white border border-slate-200/80 rounded-xl shadow-subtle;
+}
+
+.panel-elevated {
+  @apply bg-white border border-slate-200 rounded-xl shadow-card;
+}
+
+.btn-command-primary {
+  @apply inline-flex items-center justify-center gap-2 px-3.5 py-2 bg-sky-600 hover:bg-sky-700 active:bg-sky-800 text-white font-semibold text-xs rounded-lg shadow-sm transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-command-secondary {
+  @apply inline-flex items-center justify-center gap-2 px-3.5 py-2 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 font-semibold text-xs border border-slate-300 rounded-lg shadow-sm transition-all duration-150 disabled:opacity-50;
+}
+
+.btn-command-success {
+  @apply inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold text-xs rounded-lg shadow-sm transition-all;
+}
+
+.btn-command-danger {
+  @apply inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-rose-600 hover:bg-rose-700 active:bg-rose-800 text-white font-semibold text-xs rounded-lg shadow-sm transition-all;
+}
+
+.btn-command-warning {
+  @apply inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white font-semibold text-xs rounded-lg shadow-sm transition-all;
+}
+
+.badge-tag {
+  @apply px-2 py-0.5 rounded text-[11px] font-mono font-semibold uppercase tracking-wider;
+}
+
+/* The reviewer console uses the same calm, clinical surface language as the
+   provider portal. These guards also keep the specialist tools readable when
+   they render data-heavy panels. */
+.reviewer-shell [class*="bg-slate-9"],
+.reviewer-shell [class*="bg-slate-8"] {
+  background-color: #ffffff !important;
+}
+
+.reviewer-shell [class*="border-slate-8"] {
+  border-color: #e2e8f0 !important;
+}
+
+.reviewer-shell [class*="divide-slate-8"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e2e8f0 !important;
+}
+
+.reviewer-shell [class~="text-white"] {
+  color: #0f172a !important;
+}
+
+.reviewer-shell [class*="text-slate-3"],
+.reviewer-shell [class*="text-slate-4"] {
+  color: #64748b !important;
+}
+
+.reviewer-shell [class*="text-sky-4"] {
+  color: #0284c7 !important;
+}
+
+.reviewer-shell [class*="text-emerald-4"] {
+  color: #059669 !important;
+}
+
+.reviewer-shell [class*="text-amber-4"] {
+  color: #b45309 !important;
+}
+
+.reviewer-shell [class*="text-rose-4"] {
+  color: #e11d48 !important;
+}
+
+.reviewer-shell .btn-command-primary,
+.reviewer-shell .btn-command-success,
+.reviewer-shell .btn-command-danger,
+.reviewer-shell .btn-command-warning {
+  color: #ffffff !important;
+}
+
+.reviewer-shell .clinical-brand-mark {
+  color: #ffffff !important;
+}
